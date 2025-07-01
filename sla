@@ -1,0 +1,68 @@
+Claro! Aqui está o seu código corrigido, com a indentação certa:
+
+import tkinter as tk
+from tkinter import messagebox
+
+janela = tk.Tk()
+janela.title("Média - Lógica de Programação")
+
+def conta ():
+    nome = nome_entry.get()
+    ex = float(exerc_entry.get())
+    ds1 = float(des1_entry.get())
+    ds2 = float(des2_entry.get())
+    ds3 = float(des3_entry.get())
+    p1 = float(p1_entry.get())
+    p2 = float(p2_entry.get())
+    p3 = float(p3_entry.get())
+
+    mediad = (ds1 + ds2 + ds3) / 3
+    mediap = (p1 + p2 + p3) / 3
+    mediaf = (ex + mediad + mediap * 2) / 4
+    mediaf = round(mediaf, 2)
+
+    if mediaf >= 6:
+        msg = f"Parabéns! Você foi aprovado com nota {mediaf}"
+    elif mediaf >= 4:
+        msg = f"Você ainda não foi aprovado! Sua nota foi {mediaf}. Você terá a opção de fazer o IFA"
+    else:
+        msg = f"Com a nota {mediaf} você não foi aprovado! Veja pelo lado bom, você irá cursar a disciplina novamente semestre que vem!!!"
+
+    messagebox.showinfo("Resultado", msg)
+
+tk.Label(janela, text="Nome:").pack()
+nome_entry = tk.Entry(janela)
+nome_entry.pack()
+
+tk.Label(janela, text="Média dos Exercícios:").pack()
+exerc_entry = tk.Entry(janela)
+exerc_entry.pack()
+
+tk.Label(janela, text="Nota Desafio 1:").pack()
+des1_entry = tk.Entry(janela)
+des1_entry.pack()
+
+tk.Label(janela, text="Nota Desafio 2:").pack()
+des2_entry = tk.Entry(janela)
+des2_entry.pack()
+
+tk.Label(janela, text="Nota Desafio 3:").pack()
+des3_entry = tk.Entry(janela)
+des3_entry.pack()
+
+tk.Label(janela, text="Projeto Fase 1:").pack()
+p1_entry = tk.Entry(janela)
+p1_entry.pack()
+
+tk.Label(janela, text="Fase 2:").pack()
+p2_entry = tk.Entry(janela)
+p2_entry.pack()
+
+tk.Label(janela, text="Fase 3:").pack()
+p3_entry = tk.Entry(janela)
+p3_entry.pack()
+
+tk.Button(janela, text="Calcular", command=conta).pack(pady=10)
+
+janela.mainloop()
+
